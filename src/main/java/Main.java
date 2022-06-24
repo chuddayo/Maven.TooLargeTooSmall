@@ -6,9 +6,21 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        String line;
-        Scanner in = new Scanner(System.in);
+        int numInput;
+        int guessCount = 0;
+        boolean correctGuess = false;
+        int secretNum = 86;
 
-        System.out.println("zipcode rocks!");
+        while(!correctGuess) {
+            System.out.print("Guess a number between 1 and 100: ");
+            Scanner in = new Scanner(System.in);
+            numInput = Integer.parseInt(in.nextLine());
+            guessCount++;
+
+            if(numInput == secretNum) {
+                correctGuess = true;
+                System.out.println("You guessed correctly! It took you " + guessCount + " tries.");
+            }
+        }
     }
 }
