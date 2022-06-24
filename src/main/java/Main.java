@@ -9,9 +9,10 @@ public class Main {
         int numInput;
         int lastGuess = 0; // keeps track of previous guess if user has to guess again
         int guessCount = 0;
-        boolean correctGuess = false;
         int secretNum = 86;
+        boolean correctGuess = false;
 
+        // the user will be repeatedly prompted to guess until they submit a correct answer
         while(!correctGuess) {
             System.out.print("Guess a number between 1 and 100: ");
             Scanner in = new Scanner(System.in);
@@ -21,7 +22,12 @@ public class Main {
                 guessCount++;
                 if(numInput == secretNum) {
                     correctGuess = true;
-                    System.out.println("You guessed correctly! It took you " + guessCount + " tries.");
+                    if(guessCount == 1) {
+                        System.out.println("You guessed correctly on the first try! Are you cheating?");
+                    }
+                    else {
+                        System.out.println("You guessed correctly! It took you " + guessCount + " tries.");
+                    }
                 }
                 else if(numInput < secretNum) {
                     System.out.println(numInput + " is too low. Try Again.");
@@ -30,7 +36,7 @@ public class Main {
                     System.out.println(numInput + " is too high. Try Again.");
                 }
 
-                lastGuess = numInput;
+                lastGuess = numInput; // stores last guess to compare to the next guess
             }
             else {
                 System.out.println("You just guessed that, try again.");
