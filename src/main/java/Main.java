@@ -21,6 +21,12 @@ public class Main {
                 correctGuess = true;
                 System.out.println("You guessed correctly! It took you " + guessCount + " tries.");
             }
+            else if(numInput < secretNum) {
+                System.out.println(numInput + " is too low. Try Again.");
+            }
+            else {
+                System.out.println(numInput + " is too high. Try Again.");
+            }
         }
     }
 }
