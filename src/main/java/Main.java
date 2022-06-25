@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Random;
 
 /**
  * Created by iyasuwatts on 10/17/17.
@@ -9,7 +10,8 @@ public class Main {
         int numInput;
         int lastGuess = 0; // keeps track of previous guess if user has to guess again
         int guessCount = 0;
-        int secretNum = 86;
+        Random rand = new Random();
+        int secretNum = rand.nextInt(100) + 1;
         boolean correctGuess = false;
 
         // the user will be repeatedly prompted to guess until they submit a correct answer
